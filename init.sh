@@ -54,8 +54,9 @@ copy_files() {
     echo "---------------------------------------------------"
 
     for item in "${FILES_TO_COPY[@]}"; do
-        if [ "$item" == "AGENTS.md" ]; then
-            continue # Pulamos pois será tratado pelo contexto
+        # Pulamos arquivos que serão tratados especificamente pelo contexto
+        if [ "$item" == "AGENTS.md" ] || [ "$item" == "README.md" ]; then
+            continue
         fi
 
         if [ -e "$item" ]; then
@@ -68,10 +69,20 @@ copy_files() {
 
     # Cópia dos arquivos específicos de contexto
     echo -e "${CYAN}📦 Configurando arquivos específicos do contexto: ${YELLOW}$CONTEXT${NC}"
+    
+    # Move regras específicas para os locais corretos no destino
     cp ".agents/rules/$CONTEXT/AGENTS.md" "$dest/AGENTS.md"
+    cp ".agents/rules/$CONTEXT/README.md" "$dest/README.md"
     cp ".agents/rules/$CONTEXT/workflow.md" "$dest/.agents/rules/workflow.md"
+    
+    # Limpeza: remove as pastas de contexto do destino para manter o workspace limpo
+    rm -rf "$dest/.agents/rules/projeto"
+    rm -rf "$dest/.agents/rules/estudo"
+
     echo -e "${GREEN}  ✅ Configurado:${NC} AGENTS.md ($CONTEXT)"
+    echo -e "${GREEN}  ✅ Configurado:${NC} README.md ($CONTEXT)"
     echo -e "${GREEN}  ✅ Configurado:${NC} .agents/rules/workflow.md ($CONTEXT)"
+    echo -e "${GREEN}  🧹 Workspace limpo (contextos residuais removidos)${NC}"
 
     echo "---------------------------------------------------"
     echo -e "${GREEN}🎉 Operação finalizada com sucesso!${NC}\n"
