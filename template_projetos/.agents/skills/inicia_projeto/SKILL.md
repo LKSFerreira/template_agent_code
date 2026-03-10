@@ -30,8 +30,8 @@ Analise os arquivos na raiz usando ferramentas de leitura de diretório (`list_d
 
 Verifique a existência dos arquivos primários. Caso não existam, **CRIE-OS IMEDIATAMENTE** usando os templates localizados na pasta `resources/` desta skill:
 
-- `AGENTS.md`: Tente buscar em `.agents/rules/projeto/AGENTS.md` (ou estudo). Se não encontrar, use `resources/template_agents.md`.
-- `.agents/rules/workflow.md`: Tente buscar em `.agents/rules/projeto/workflow.md` (ou estudo). Se não encontrar, use `resources/template_workflow.md`.
+- `AGENTS.md` (Baseado em `resources/template_agents.md`)
+- `.agents/rules/workflow.md` (Baseado em `resources/template_workflow.md`)
 - `.metadocs/roadmap.md` (Baseado em `resources/template_roadmap.md`)
 - `README.md` (Se não existir, crie-o para o projeto usando um modelo elegante e moderno)
 

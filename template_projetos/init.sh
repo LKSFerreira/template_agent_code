@@ -27,37 +27,13 @@ FILES_TO_COPY=(
 # Funções do Script
 # ==========================================
 
-# Função para escolher o contexto
-choose_context() {
-    echo -e "\n${CYAN}🎯 Escolha o contexto de inicialização:${NC}"
-    echo -e "  ${YELLOW}1${NC} - Projeto (Padrão corporativo/profissional)"
-    echo -e "  ${YELLOW}2${NC} - Estudo (Foco em aprendizado e anotações)"
-    read -p "Opção [1]: " context_option
-
-    case $context_option in
-        2)
-            CONTEXT="estudo"
-            ;;
-        *)
-            CONTEXT="projeto"
-            ;;
-    esac
-    echo -e "${GREEN}✅ Contexto selecionado: ${YELLOW}$CONTEXT${NC}"
-}
-
 # Função para realizar a cópia dos arquivos
 copy_files() {
     local dest="$1"
-    choose_context
-
     echo -e "\n${CYAN}🚀 Iniciando cópia para: ${YELLOW}$dest${NC}"
     echo "---------------------------------------------------"
 
     for item in "${FILES_TO_COPY[@]}"; do
-        if [ "$item" == "AGENTS.md" ]; then
-            continue # Pulamos pois será tratado pelo contexto
-        fi
-
         if [ -e "$item" ]; then
             cp -r "$item" "$dest/"
             echo -e "${GREEN}  ✅ Copiado:${NC} $item"
@@ -65,13 +41,6 @@ copy_files() {
             echo -e "${RED}  ⚠️ Ignorado:${NC} $item (não encontrado na origem)"
         fi
     done
-
-    # Cópia dos arquivos específicos de contexto
-    echo -e "${CYAN}📦 Configurando arquivos específicos do contexto: ${YELLOW}$CONTEXT${NC}"
-    cp ".agents/rules/$CONTEXT/AGENTS.md" "$dest/AGENTS.md"
-    cp ".agents/rules/$CONTEXT/workflow.md" "$dest/.agents/rules/workflow.md"
-    echo -e "${GREEN}  ✅ Configurado:${NC} AGENTS.md ($CONTEXT)"
-    echo -e "${GREEN}  ✅ Configurado:${NC} .agents/rules/workflow.md ($CONTEXT)"
 
     echo "---------------------------------------------------"
     echo -e "${GREEN}🎉 Operação finalizada com sucesso!${NC}\n"

@@ -1,26 +1,21 @@
-# Arquitetura de Instruções do Agente
+# Repositório de Templates LKSFerreira
 
-Este projeto usa a pasta `.agents/` como fonte oficial de instruções.
+Este repositório contém os templates unificados para **Projetos** e **Estudos**.
 
-> **Diretriz crítica:** O agente deve seguir estritamente as regras para cada contexto solicitado pelo usuário. A lista de precedência abaixo define as diretrizes deste projeto.
+## Como utilizar
 
-## Regra de organização
-- Regras: **o que é obrigatório**.
-- Skills: **como executar** uma tarefa específica.
-- Workflows: **gatilhos (slash commands) e procedimentos**.
+Para inicializar um novo ambiente usando este template, execute o script:
 
-## Ordem de leitura e precedência
-1. `/.agents/rules/code.md`.
-2. `/.agents/rules/workflow.md`.
-3. `/.agents/rules/<linguagem>.md`, conforme `LINGUAGEM_PROJETO`.
+```bash
+./init.sh
+```
 
-## Linguagem do projeto
-> LINGUAGEM_PROJETO: <linguagem>
+O script perguntará qual contexto você deseja aplicar e configurará os arquivos `AGENTS.md` e `.agents/rules/workflow.md` corretamente.
 
-Mapeamento:
-- Python -> `/.agents/rules/python.md`
-- Java -> `/.agents/rules/java.md`
-- JavaScript -> `/.agents/rules/javascript.md`
+## Estrutura de Contextos
 
-## Diretriz de versionamento
-- Commits, push e ações de versionamento só podem ser executados quando solicitados explicitamente pelo usuário.
+As regras específicas de cada contexto estão localizadas em:
+- [Projeto](.agents/rules/projeto/)
+- [Estudo](.agents/rules/estudo/)
+
+Todas as outras regras e skills são compartilhadas entre os contextos.
