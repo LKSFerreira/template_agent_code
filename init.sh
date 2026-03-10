@@ -21,6 +21,8 @@ FILES_TO_COPY=(
     ".vscode"
     "AGENTS.md"
     "README.md"
+    "dev.sh"
+    "exec.sh"
 )
 
 # ==========================================
