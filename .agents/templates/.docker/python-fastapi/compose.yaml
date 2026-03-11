@@ -3,7 +3,7 @@
 # =============================================================================
 
 services:
-  backend:
+  backend_<nome-do-projeto>_:
     # Em vez de usar a imagem crua, mandamos ele construir o nosso Dockerfile
     build:
       context: ../

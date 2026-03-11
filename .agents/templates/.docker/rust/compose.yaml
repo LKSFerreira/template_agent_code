@@ -1,12 +1,9 @@
 # =============================================================================
 # Docker Compose - Rust (Otimizado com Multi-stage Cache)
 # =============================================================================
-# Uso: docker compose up
-# App: http://localhost:8080
-# =============================================================================
 
 services:
-  app:
+  app_<nome-do-projeto>_:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile.rust
@@ -21,7 +18,7 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ../.env.development
+      - ../.env
     environment:
       - RUST_ENV=development
       - RUST_LOG=debug

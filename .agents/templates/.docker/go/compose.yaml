@@ -1,10 +1,9 @@
 # =============================================================================
 # Docker Compose - Go (Otimizado com Multi-stage Cache)
 # =============================================================================
-# Uso: docker compose up
-# App: http://localhost:8080
-# =============================================================================
-  app:
+
+services:
+  app_<nome-do-projeto>_:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile.go

@@ -1,12 +1,9 @@
 # =============================================================================
 # Docker Compose - Python (Otimizado com Multi-stage Cache)
 # =============================================================================
-# Uso: docker compose up
-# App: Padrão CLI/Scripts
-# =============================================================================
 
 services:
-  backend:
+  backend_<nome-do-projeto>_:
     build:
       context: ../
       dockerfile: .docker/Dockerfile.python

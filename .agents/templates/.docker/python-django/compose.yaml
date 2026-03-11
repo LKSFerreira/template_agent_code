@@ -1,13 +1,9 @@
 # =============================================================================
 # Docker Compose - Python com Django (Otimizado com UV e Multi-stage Cache)
 # =============================================================================
-# Uso: docker compose up
-# App: http://localhost:8000
-# Admin: http://localhost:8000/admin
-# =============================================================================
 
 services:
-  backend:
+  backend_<nome-do-projeto>_:
     build:
       context: ../
       dockerfile: .docker/Dockerfile.python

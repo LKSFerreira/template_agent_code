@@ -1,12 +1,9 @@
 # =============================================================================
 # Docker Compose - PHP com Laravel (Otimizado com Multi-stage Cache)
 # =============================================================================
-# Uso: docker compose up
-# App: http://localhost:8000
-# =============================================================================
 
 services:
-  app:
+  app_<nome-do-projeto>_:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile.php
@@ -21,7 +18,7 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ../.env.development
+      - ../.env
     environment:
       - APP_ENV=local
       - APP_DEBUG=true

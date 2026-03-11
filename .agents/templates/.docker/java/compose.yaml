@@ -1,12 +1,9 @@
 # =============================================================================
 # Docker Compose - Java (Otimizado com Multi-stage Cache)
 # =============================================================================
-# Uso: docker compose up
-# App: Execução standalone
-# =============================================================================
 
 services:
-  app:
+  app_<nome-do-projeto>_:
     build:
       context: ../
       dockerfile: .devcontainer/Dockerfile.java
@@ -19,7 +16,7 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ../.env.development
+      - ../.env
     environment:
       - JAVA_ENV=development
 
