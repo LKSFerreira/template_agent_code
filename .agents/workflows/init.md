@@ -1,5 +1,5 @@
 ---
-description: Gerador de Contexto de Inicialização e Padronização de Projeto
+description: Inicia o projeto
 ---
 
 # Inicialização de Projeto
