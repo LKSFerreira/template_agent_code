@@ -16,7 +16,7 @@ Use esta skill SEMPRE que for solicitado a criar um commit, descrever mudanças 
 
 1. **Análise de Alterações:** Utilize as ferramentas de git e diff para entender exatamente quais arquivos foram alterados.
 2. **Definição de Tipo e Emoji:** Consulte a Tabela de Tipos (abaixo) para classificar o commit corretamente.
-3. **Construção da Mensagem:** Use estritamente o modelo localizado em `resources/commit_template.txt`. Nenhuma outra variação é permitida.
+3. **Construção da Mensagem:** Use estritamente o modelo localizado em `resources/commit_template.md`. Nenhuma outra variação é permitida.
 4. **Execução:** Se autorizado pelo usuário, rode o comando `git commit -m "SUA MENSAGEM"`.
 
 ### Tabela de Tipos Oficial (Obrigatório)
