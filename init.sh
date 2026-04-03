@@ -21,6 +21,10 @@ FILES_TO_COPY=(
     ".vscode"
     "AGENTS.md"
     "README.md"
+)
+
+# Arquivos exclusivos do ambiente Docker
+FILES_DOCKER=(
     "dev.sh"
     "exec.sh"
 )
@@ -47,10 +51,27 @@ choose_context() {
     echo -e "${GREEN}✅ Contexto selecionado: ${YELLOW}$CONTEXT${NC}"
 }
 
+# Função para escolher se quer configurar Docker
+choose_docker() {
+    echo -e "\n${CYAN}🐳 Deseja criar a estrutura e ambiente Docker?${NC}"
+    echo -e "   ${YELLOW}s${NC} / ${YELLOW}sim${NC}  — Copia dev.sh, exec.sh e a pasta .docker template"
+    echo -e "   ${YELLOW}n${NC} / ${YELLOW}nao${NC}  — Pula toda a configuração Docker"
+    read -p "$(echo -e "${CYAN}Opção [n]: ${NC}")" docker_option
+
+    if [[ "$docker_option" =~ ^[Ss](im)?$ ]]; then
+        USAR_DOCKER=true
+        echo -e "${GREEN}✅ Docker habilitado para este projeto.${NC}"
+    else
+        USAR_DOCKER=false
+        echo -e "${YELLOW}⏭️  Docker ignorado. Nenhum arquivo Docker será copiado.${NC}"
+    fi
+}
+
 # Função para realizar a cópia dos arquivos
 copy_files() {
     local dest="$1"
     choose_context
+    choose_docker
 
     echo -e "\n${CYAN}🚀 Iniciando cópia para: ${YELLOW}$dest${NC}"
     echo "---------------------------------------------------"
@@ -68,6 +89,27 @@ copy_files() {
             echo -e "${RED}  ⚠️ Ignorado:${NC} $item (não encontrado na origem)"
         fi
     done
+
+    # Copia arquivos Docker apenas se o usuário escolheu
+    if [ "$USAR_DOCKER" = true ]; then
+        echo -e "${CYAN}🐳 Copiando arquivos Docker...${NC}"
+        for item in "${FILES_DOCKER[@]}"; do
+            if [ -e "$item" ]; then
+                cp -r "$item" "$dest/"
+                echo -e "${GREEN}  ✅ Copiado:${NC} $item"
+            else
+                echo -e "${RED}  ⚠️ Ignorado:${NC} $item (não encontrado na origem)"
+            fi
+        done
+
+        local template_docker=".agents/templates/.docker"
+        if [ -d "$template_docker" ]; then
+            cp -r "$template_docker" "$dest/.docker"
+            echo -e "${GREEN}  ✅ Copiado:${NC} .docker/ (templates de ambiente)"
+        else
+            echo -e "${RED}  ⚠️ Ignorado:${NC} .docker/ (template não encontrado em $template_docker)"
+        fi
+    fi
 
     # Cópia dos arquivos específicos de contexto
     echo -e "${CYAN}📦 Configurando arquivos específicos do contexto: ${YELLOW}$CONTEXT${NC}"
