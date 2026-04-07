@@ -195,7 +195,7 @@ search_directory() {
         local found_paths=()
         while IFS=  read -r -d $'\0'; do
             found_paths+=("$REPLY")
-        done < <(find "$current_dir" -maxdepth 2 -type d -name "$target_name" 2>/dev/null -print0)
+        done < <(find "$current_dir" -maxdepth 2 -type d -iname "*$target_name*" 2>/dev/null -print0)
 
         for match in "${found_paths[@]}"; do
             # Verifica se achou algo e se já não perguntamos sobre essa pasta específica
