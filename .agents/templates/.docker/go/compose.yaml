@@ -1,13 +1,9 @@
-# =============================================================================
-# Docker Compose - Go (Otimizado com Multi-stage Cache)
-# =============================================================================
-
 services:
-  app_<nome-do-projeto>_:
+  app:
     build:
       context: ../
-      dockerfile: .devcontainer/Dockerfile.go
-      target: dev # A mágica acontece aqui: usamos só o estágio de desenvolvimento!
+      dockerfile: .docker/Dockerfile.go
+      target: dev
     ports:
       - "8080:8080"
     volumes:
@@ -16,6 +12,6 @@ services:
     stdin_open: true
     tty: true
     env_file:
-      - ../.env.development
+      - ../.env
     environment:
-      - APP_ENV=development
+      - GO_ENV=development

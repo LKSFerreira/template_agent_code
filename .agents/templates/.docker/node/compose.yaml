@@ -1,33 +1,22 @@
-# =============================================================================
-# Docker Compose - Node (Otimizado com Multi-stage Cache)
-# =============================================================================
-
 services:
-  app_<nome-do-projeto>_:
+  app:
     build:
       context: ../
       dockerfile: .docker/Dockerfile.node
       target: dev
     ports:
-      - '5173:5173' # Frontend / Vite
-      - '3000:3000' # Backend / API Local (Express)
+      - "5173:5173"
+      - "3000:3000"
     volumes:
       - ../:/app
       - /app/node_modules
     working_dir: /app
     stdin_open: true
     tty: true
-    environment:
-      - APP_ENV=development
-      - VITE_APP_ENV=development
-      - NODE_ENV=development
-      - VITE_USAR_BANCO_POSTGRES=true
-      - WATCHPACK_POLLING=true
-      - HOST_IP=${HOST_IP:-}
     env_file:
       - ../.env
-    depends_on:
-      - database_<nome-do-projeto>_
-
-volumes:
-  postgres-data:
+    environment:
+      - NODE_ENV=development
+      - APP_ENV=development
+      - WATCHPACK_POLLING=true
+      - HOST_IP=${HOST_IP:-}

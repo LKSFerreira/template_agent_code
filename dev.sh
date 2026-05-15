@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# Dev Script - Sem Susto
+# Dev Script
 # =============================================================================
 # Este script detecta o IP da sua rede local (Windows) e inicia o Docker.
 # Uso: ./dev.sh
@@ -25,7 +25,7 @@ docker compose -f .docker/compose.yaml up -d "$@"
 
 # 2. Limpa e mostra status de inicialização
 clear
-echo -e "\033[1;35m🚀 SEM SUSTO - INICIANDO AMBIENTE\033[0m"
+echo -e "\033[1;35m🚀 INICIANDO AMBIENTE\033[0m"
 echo -e "\033[0;90mOs logs e links de acesso aparecerão abaixo...\033[0m"
 echo ""
 

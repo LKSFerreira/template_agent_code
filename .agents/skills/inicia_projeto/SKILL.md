@@ -1,50 +1,56 @@
 ---
 name: inicia_projeto
-description: Gerador de Contexto de Inicialização e Padronização de Projeto
+description: Gera o contexto inicial de um projeto ou estudo recém-criado.
 ---
 
-# 🎯 Propósito
+# Propósito
 
-Atue como um Arquiteto de Software focado em Padronização. Use esta skill SEMPRE que o usuário pedir para analisar, inicializar ou configurar as bases de um projeto novo ou recém-criado, garantindo a infraestrutura documental exigida.
+Padronizar um repositório novo ou recém-criado com regras, metadocs e README coerentes com a stack detectada.
 
-# 📋 Pré-requisitos
+# Workflow
 
-- Verifique se a aplicação está vazia ou já tem arquivos (para não sobrescrever documentações importantes sem querer).
+## 1. Identificar stack
 
-# 🛠️ Instruções de Execução (Workflow)
+Prioridade:
 
-## 1: Identificação de Stack (Ação Imperativa)
+1. `package.json` -> JavaScript/TypeScript
+2. `pyproject.toml` ou `requirements.txt` -> Python
+3. `go.mod` -> Go
+4. `Cargo.toml` -> Rust
+5. `composer.json` -> PHP
+6. `pom.xml` ou `build.gradle` -> Java
+7. Extensões predominantes em `src/`
 
-Analise os arquivos na raiz usando ferramentas de leitura de diretório (`list_dir`) para determinar a linguagem dominante.
-**Prioridade de Identificação:**
+## 2. Criar estrutura mínima
 
-1. `package.json` -> `javascript/typescript`
-2. `pyproject.toml` ou `requirements.txt` -> `python`
-3. `go.mod` -> `go`
-4. `Cargo.toml` -> `rust`
-5. `composer.json` -> `php`
-6. `pom.xml` ou `build.gradle` -> `java`
-7. _Fallback_: Analise as extensões predominantes em `src/`.
+Se não existirem, crie:
 
-## 2: Mapeamento e Criação de Estrutura Documental
+- `AGENTS.md`
+- `.agents/rules/workflow.md`
+- `.metadocs/roadmap.md`
+- `.metadocs/historico.md`
+- `.metadocs/feat/`
+- `.metadocs/walkthrough/`
+- `README.md`
 
-Verifique a existência dos arquivos primários. Caso não existam, **CRIE-OS IMEDIATAMENTE** usando os templates localizados na pasta `resources/` desta skill:
+Use os templates em `resources/` quando disponíveis.
 
-- `AGENTS.md`: Tente buscar em `.agents/rules/projeto/AGENTS.md` (ou estudo). Se não encontrar, use `resources/template_agents.md`.
-- `.agents/rules/workflow.md`: Tente buscar em `.agents/rules/projeto/workflow.md` (ou estudo). Se não encontrar, use `resources/template_workflow.md`.
-- `.metadocs/roadmap.md` (Baseado em `resources/template_roadmap.md`)
-- `README.md` (Se não existir, crie-o para o projeto usando um modelo elegante e moderno)
+## 3. Configurar linguagem
 
-## 3: Configuração de Regras Específicas
+- Substitua `> LINGUAGEM_PROJETO: <linguagem>` pela stack detectada.
+- Garanta que exista `.agents/rules/<linguagem>.md` quando a linguagem fizer parte do template.
+- Se a linguagem não tiver regra dedicada, registre isso como pendência em `.metadocs/roadmap.md`.
 
-1. **AGENTS.md:** Substitua a tag `> LINGUAGEM_PROJETO: <linguagem>` dentro do `AGENTS.md` gerado pela linguagem detectada no Passo 1.
-2. **Rules Locais:** Verifique se `.agents/rules/<linguagem>.md` existe.
-   - **Se não existir:** Crie o arquivo contendo as melhores práticas de Clean Code, padrões de nomenclatura e estrutura de pastas para aquela linguagem.
+## 4. Finalizar
 
-## 4: Finalização e Notificação
+Informe:
 
-Ao concluir as criações e identificar a stack, use a ferramenta de notificação (`notify_user`) para exibir:
+- linguagem detectada;
+- arquivos criados ou preservados;
+- próximos passos recomendados;
+- se o projeto parece pronto para Docker ou precisa de configuração manual.
 
-1. Qual linguagem foi detectada.
-2. Quais arquivos foram gerados/configurados.
-3. Se o ambiente parece pronto para a configuração do Docker (`/setup_docker`) ou se precisa de mais algo.
+# Restrições
+
+- Não sobrescreva documentação existente sem comparar conteúdo.
+- Não instale dependências durante a inicialização documental.

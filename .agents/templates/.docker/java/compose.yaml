@@ -1,17 +1,11 @@
-# =============================================================================
-# Docker Compose - Java (Otimizado com Multi-stage Cache)
-# =============================================================================
-
 services:
-  app_<nome-do-projeto>_:
+  app:
     build:
       context: ../
-      dockerfile: .devcontainer/Dockerfile.java
+      dockerfile: .docker/Dockerfile.java
       target: dev
     volumes:
       - ../:/app
-      - maven-cache:/root/.m2
-      - gradle-cache:/root/.gradle
     working_dir: /app
     stdin_open: true
     tty: true
@@ -19,7 +13,3 @@ services:
       - ../.env
     environment:
       - JAVA_ENV=development
-
-volumes:
-  maven-cache:
-  gradle-cache:

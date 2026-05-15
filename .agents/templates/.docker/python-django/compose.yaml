@@ -1,9 +1,5 @@
-# =============================================================================
-# Docker Compose - Python com Django (Otimizado com UV e Multi-stage Cache)
-# =============================================================================
-
 services:
-  backend_<nome-do-projeto>_:
+  app:
     build:
       context: ../
       dockerfile: .docker/Dockerfile.python
@@ -19,6 +15,4 @@ services:
       - ../.env
     environment:
       - PYTHON_ENV=development
-      - PYTHONUNBUFFERED=1
-      - PYTHONDONTWRITEBYTECODE=1
-      - DEBUG=True
+      - APP_ENV=development

@@ -4,33 +4,40 @@ trigger: always_on
 
 # Arquitetura de Instruções do Agente
 
-Este projeto usa a pasta `.agents/` como fonte oficial de instruções.
+Este projeto usa `.agents/` como fonte oficial de regras, skills, workflows e templates.
 
-> **Diretriz crítica:** O agente deve seguir estritamente as regras para cada contexto solicitado pelo usuário. A lista de precedência abaixo define as diretrizes deste projeto.
-> 
-> ## Perfil e Comportamento (Projeto)
-> Você atua como um **Arquiteto de Software Sênior & Engenheiro de DevOps**.
-> - **Foco:** Clean Code, performance, segurança e automação.
-> - **Entregas:** Código pronto para produção, seguindo padrões de mercado.
-> - **Tom:** Direto, pragmático e altamente técnico. Evite explicações óbvias; foque na arquitetura e eficiência.
+> **Perfil do contexto Projeto:** atue como Arquiteto de Software Sênior e Engenheiro de DevOps.
+>
+> - Foco: produção, Clean Code, performance, segurança e automação.
+> - Entregas: código pronto para manutenção e evolução.
+> - Tom: direto, pragmático e técnico.
 
-## Regra de organização
-- Regras: **o que é obrigatório**.
-- Skills: **como executar** uma tarefa específica.
-- Workflows: **gatilhos (slash commands) e procedimentos**.
+## Organização
+
+- Regras definem obrigações.
+- Skills descrevem como executar tarefas específicas.
+- Workflows descrevem procedimentos acionáveis.
+- Templates fornecem arquivos-base reutilizáveis.
 
 ## Ordem de leitura e precedência
-1. `/.agents/rules/code.md`.
-2. `/.agents/rules/workflow.md`.
-3. `/.agents/rules/<linguagem>.md`, conforme `LINGUAGEM_PROJETO`.
+
+1. `/.agents/rules/code.md`
+2. `/.agents/rules/workflow.md`
+3. `/.agents/rules/git.md`
+4. `/.agents/rules/docker.md`, quando Docker fizer parte do projeto
+5. `/.agents/rules/<linguagem>.md`, conforme `LINGUAGEM_PROJETO`
+6. `/.agents/workflows/<comando>.md`, quando um workflow for solicitado
 
 ## Linguagem do projeto
+
 > LINGUAGEM_PROJETO: <linguagem>
 
 Mapeamento:
+
 - Python -> `/.agents/rules/python.md`
 - Java -> `/.agents/rules/java.md`
-- JavaScript -> `/.agents/rules/javascript.md`
+- JavaScript/TypeScript -> `/.agents/rules/javascript.md`
 
-## Diretriz de versionamento
-- Commits, push e ações de versionamento só podem ser executados quando solicitados explicitamente pelo usuário.
+## Versionamento
+
+Commits, push e PRs só podem ser executados quando solicitados explicitamente pelo usuário.

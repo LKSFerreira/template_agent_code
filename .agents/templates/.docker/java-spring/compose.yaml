@@ -1,27 +1,18 @@
-# =============================================================================
-# Docker Compose - Java com Spring Boot (Otimizado com Multi-stage Cache)
-# =============================================================================
-
 services:
-  app_<nome-do-projeto>_:
+  app:
     build:
       context: ../
-      dockerfile: .devcontainer/Dockerfile.java
+      dockerfile: .docker/Dockerfile.java
       target: dev
     ports:
       - "8080:8080"
     volumes:
       - ../:/app
-      - maven-cache:/root/.m2
     working_dir: /app
     stdin_open: true
     tty: true
     env_file:
       - ../.env
     environment:
-      - JAVA_ENV=development
       - SPRING_PROFILES_ACTIVE=dev
-      - JAVA_TOOL_OPTIONS=-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0
-
-volumes:
-  maven-cache:
+      - JAVA_ENV=development

@@ -1,13 +1,9 @@
-# =============================================================================
-# Docker Compose - Python (Otimizado com Multi-stage Cache)
-# =============================================================================
-
 services:
-  backend_<nome-do-projeto>_:
+  app:
     build:
       context: ../
       dockerfile: .docker/Dockerfile.python
-      target: dev # Lembra dos estágios? Aqui chamamos só o ambiente de Dev!
+      target: dev
     volumes:
       - ../:/app
     working_dir: /app
@@ -17,5 +13,4 @@ services:
       - ../.env
     environment:
       - PYTHON_ENV=development
-      - PYTHONUNBUFFERED=1
-      - PYTHONDONTWRITEBYTECODE=1
+      - APP_ENV=development

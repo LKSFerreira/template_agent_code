@@ -1,12 +1,8 @@
-# =============================================================================
-# Docker Compose - JavaScript/TypeScript com Express (Otimizado com Multi-stage Cache)
-# =============================================================================
-
 services:
-  app_<nome-do-projeto>_:
+  app:
     build:
       context: ../
-      dockerfile: .devcontainer/Dockerfile.node
+      dockerfile: .docker/Dockerfile.node
       target: dev
     ports:
       - "3000:3000"
@@ -21,3 +17,4 @@ services:
     environment:
       - NODE_ENV=development
       - WATCHPACK_POLLING=true
+      - HOST_IP=${HOST_IP:-}

@@ -1,21 +1,34 @@
 # Repositório de Templates LKSFerreira
 
-Este repositório contém os templates unificados para **Projetos** e **Estudos**.
+Este repositório contém o template multiagente usado para inicializar **projetos** e **estudos**.
+
+> LINGUAGEM_PROJETO: template
+
+## Fonte oficial
+
+- Regras: `.agents/rules/`
+- Skills: `.agents/skills/`
+- Workflows: `.agents/workflows/`
+- Templates: `.agents/templates/`
+- Metadocs: `.metadocs/`
 
 ## Como utilizar
 
-Para inicializar um novo ambiente usando este template, execute o script:
+Para inicializar um novo ambiente usando este template, execute:
 
 ```bash
 ./init.sh
 ```
 
-O script perguntará qual contexto você deseja aplicar e configurará os arquivos `AGENTS.md` e `.agents/rules/workflow.md` corretamente.
+O script perguntará qual contexto aplicar e configurará `AGENTS.md`, `README.md`, `.agents/rules/workflow.md` e a estrutura documental mínima no destino.
 
-## Estrutura de Contextos
+## Contextos
 
-As regras específicas de cada contexto estão localizadas em:
-- [Projeto](.agents/rules/projeto/)
-- [Estudo](.agents/rules/estudo/)
+- Projeto: `.agents/rules/projeto/`
+- Estudo: `.agents/rules/estudo/`
 
-Todas as outras regras e skills são compartilhadas entre os contextos.
+Todas as outras regras, skills e templates são compartilhados entre os contextos.
+
+## Regra de versionamento
+
+Commits, push e PRs só devem ser executados quando solicitados explicitamente pelo usuário.
