@@ -442,6 +442,12 @@ copy_files() {
     if [ "$USAR_DOCKER" = true ]; then
         echo -e "${CYAN}Configurando Docker:${NC}"
         copy_docker_files "$dest"
+    else
+        echo -e "${CYAN}Removendo referências de Docker do destino...${NC}"
+        rm -f "$dest/.agents/rules/docker.md"
+        rm -f "$dest/.agents/workflows/setup_docker.md"
+        rm -rf "$dest/.agents/skills/ambiente_docker"
+        rm -rf "$dest/.agents/templates/.docker"
     fi
 
     echo "---------------------------------------------------"
