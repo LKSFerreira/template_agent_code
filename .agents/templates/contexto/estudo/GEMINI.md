@@ -45,6 +45,7 @@ Quando o usuário solicitar uma tarefa listada abaixo, leia o `SKILL.md` corresp
 | `/feat` | `.agents/skills/feat/` | Finalizar feature |
 | `/front` | `.agents/skills/front/` | Frontend JS/TS |
 | `/skill` | `.agents/skills/skill/` | Criar nova skill |
+| `/find` | `.agents/skills/find/` | Buscar skills no marketplace |
 | `/web` | `.agents/skills/web/` | Pesquisa web |
 
 ## Regras críticas (inline)
