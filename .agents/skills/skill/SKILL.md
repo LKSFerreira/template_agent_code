@@ -1,5 +1,6 @@
 ---
-name: skill, autoria_skill
+name: skill
+alias: autoria_skill
 description: Cria ou melhora skills reutilizáveis em `.agents/skills/` com escopo claro e instruções acionáveis.
 tags: [skill, automação, template, meta, criação, agente, scaffold]
 triggers: ["cria uma skill", "nova skill", "melhora a skill", "skill", "salva esse procedimento"]
@@ -42,7 +43,8 @@ O frontmatter é obrigatório e deve seguir o formato:
 
 ```yaml
 ---
-name: nome_ingles, nome_portugues
+name: nome_ingles
+alias: nome_portugues
 description: Frase clara sobre o que faz e quando o agente deve usar.
 tags: [palavra-chave-1, palavra-chave-2, palavra-chave-3]
 triggers: ["frase que o usuário diria", "outra frase", "comando"]
@@ -51,7 +53,8 @@ triggers: ["frase que o usuário diria", "outra frase", "comando"]
 
 ### Regras do frontmatter:
 
-- **`name`**: inglês primeiro, português depois. O nome inglês deve ser o mesmo do diretório.
+- **`name`**: somente o nome em inglês (igual ao diretório). Só aceita letras, números, hífens, underscores, pontos e espaços.
+- **`alias`**: nome em português para discovery bilíngue.
 - **`description`**: incluir gatilhos de uso — o agente decide se carrega a skill com base nessa linha.
 - **`tags`**: 3 a 8 palavras-chave para discovery semântica.
 - **`triggers`**: frases naturais que o usuário diria para acionar.

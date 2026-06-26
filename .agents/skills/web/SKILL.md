@@ -1,5 +1,6 @@
 ---
-name: web, busca_web
+name: web
+alias: busca_web
 description: Orienta uso de pesquisa web para informações atuais, documentação oficial e validação de fatos instáveis.
 tags: [web, pesquisa, busca, documentação, internet, atualização]
 triggers: ["pesquisa na web", "busca isso", "procura na internet", "web search", "web"]

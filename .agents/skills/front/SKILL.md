@@ -1,5 +1,6 @@
 ---
-name: front, frontend_js
+name: front
+alias: frontend_js
 description: Orienta implementação frontend JavaScript/TypeScript com foco em layout, acessibilidade, estado e experiência de uso.
 tags: [frontend, react, vue, css, html, layout, componente, ui, ux]
 triggers: ["cria componente", "frontend", "layout", "estilização", "interface", "ui"]

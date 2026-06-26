@@ -1,5 +1,6 @@
 ---
-name: deps, dependencias
+name: deps
+alias: dependencias
 description: Gerencia dependências, runtimes e pacotes respeitando a stack e o ambiente do projeto.
 tags: [dependências, pacotes, npm, pip, uv, maven, instalação, atualização]
 triggers: ["instala dependência", "adiciona pacote", "atualiza deps", "deps", "dependências"]

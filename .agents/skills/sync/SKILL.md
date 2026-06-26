@@ -1,5 +1,6 @@
 ---
-name: sync, sincroniza_contexto
+name: sync
+alias: sincroniza_contexto
 description: Sincronização de contexto, auditoria e escuta de demandas. Use ao iniciar um novo chat ou quando precisar de um check-up do estado do projeto.
 tags: [contexto, sincronização, auditoria, estado, roadmap, onboarding]
 triggers: ["novo chat", "sincroniza", "onde paramos", "contexto", "retomar", "status do projeto"]

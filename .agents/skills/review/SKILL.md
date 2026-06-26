@@ -1,5 +1,6 @@
 ---
-name: review, revisao_codigo
+name: review
+alias: revisao_codigo
 description: Revisa alterações de código com foco em bugs, regressões, segurança, arquitetura e lacunas de teste.
 tags: [review, revisão, code-review, qualidade, bugs, segurança]
 triggers: ["revisa o código", "code review", "review", "analisa as mudanças", "revisão"]

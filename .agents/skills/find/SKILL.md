@@ -1,5 +1,6 @@
 ---
-name: find, busca_skills
+name: find
+alias: busca_skills
 description: Descobre e instala skills do ecossistema aberto (skills.sh) quando o agente precisa de capacidades extras.
 tags: [skills, marketplace, busca, instalação, extensão, ecossistema, npx]
 triggers: ["busca uma skill", "instala skill", "tem skill para isso", "find skill", "skills.sh", "procura uma skill"]

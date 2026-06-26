@@ -1,5 +1,6 @@
 ---
-name: diag, diagnosticos
+name: diag
+alias: diagnosticos
 description: Investiga erros de build, lint, runtime e configuração antes de propor correções.
 tags: [debug, erro, diagnóstico, build, lint, runtime, stack-trace]
 triggers: ["deu erro", "não funciona", "debug", "investiga o erro", "diagnóstico", "falhou"]

@@ -1,5 +1,6 @@
 ---
-name: db, banco_dados
+name: db
+alias: banco_dados
 description: Planeja e valida mudanças de banco de dados, queries, migrações e seeds com foco em segurança e reversibilidade.
 tags: [banco, database, sql, migração, schema, query, postgres, seed]
 triggers: ["cria migração", "altera banco", "database", "sql", "query", "schema"]

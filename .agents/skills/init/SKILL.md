@@ -1,5 +1,6 @@
 ---
-name: init, inicia_projeto
+name: init
+alias: inicia_projeto
 description: Gera o contexto inicial de um projeto ou estudo recém-criado.
 tags: [setup, inicialização, projeto, scaffold, bootstrap, stack]
 triggers: ["inicia o projeto", "setup inicial", "configura o ambiente", "init", "inicializar"]

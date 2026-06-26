@@ -1,5 +1,6 @@
 ---
-name: commit, cria_commit
+name: commit
+alias: cria_commit
 description: Aplica rigorosamente os padrões de versionamento para criar commits atômicos e segmentados, com mensagem padronizada por emoji e tipo. Use sempre que o usuário pedir para criar commit, sugerir mensagem de versionamento, analisar `git diff` para commitar, ou executar `git add`/`git commit`.
 tags: [git, versionamento, commit, stage, add, mensagem]
 triggers: ["faz o commit", "commitar", "versionar", "git add", "commit", "prepara o commit"]

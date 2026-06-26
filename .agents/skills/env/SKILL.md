@@ -1,5 +1,6 @@
 ---
-name: env, variaveis_ambiente
+name: env
+alias: variaveis_ambiente
 description: Orienta criação e manutenção de variáveis de ambiente, secrets e arquivos `.env.example`.
 tags: [env, variáveis, secrets, configuração, dotenv, ambiente]
 triggers: ["variável de ambiente", "configura env", "secrets", ".env", "env"]

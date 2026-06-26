@@ -1,5 +1,6 @@
 ---
-name: tests, testes
+name: tests
+alias: testes
 description: Planeja e executa validações automatizadas ou manuais adequadas à stack do projeto.
 tags: [testes, validação, qualidade, cobertura, unitário, integração, e2e]
 triggers: ["roda os testes", "testa", "cria teste", "validação", "coverage", "tests"]

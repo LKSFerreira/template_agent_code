@@ -1,5 +1,6 @@
 ---
-name: feat, fecha_feature
+name: feat
+alias: fecha_feature
 description: Finaliza uma feature documentalmente, promovendo o artefato de 'implementation_plan' para 'implemented' e sincronizando histórico e referências.
 tags: [feature, entrega, documentação, promoção, conclusão, release]
 triggers: ["finaliza a feature", "feature pronta", "entrega", "fecha feature", "concluído"]

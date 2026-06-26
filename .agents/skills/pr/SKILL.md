@@ -1,5 +1,6 @@
 ---
-name: pr, cria_pr
+name: pr
+alias: cria_pr
 description: Gera o texto descritivo e estético de Pull Requests baseando-se estritamente no template obrigatório, com foco impecável em formatação.
 tags: [git, pull-request, pr, review, merge, github]
 triggers: ["abre o pr", "cria o pull request", "texto do pr", "pr", "pull request"]

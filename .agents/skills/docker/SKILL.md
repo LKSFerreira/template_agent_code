@@ -1,5 +1,6 @@
 ---
-name: docker, ambiente_docker
+name: docker
+alias: ambiente_docker
 description: Gerencia setup e manutenção do ambiente Docker Compose usando os templates oficiais do repositório.
 tags: [docker, compose, container, devcontainer, infraestrutura, ambiente]
 triggers: ["sobe o docker", "configura docker", "compose", "container", "docker"]
