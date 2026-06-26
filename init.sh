@@ -19,6 +19,8 @@ FILES_TO_COPY=(
     ".vscode"
     "AGENTS.md"
     "README.md"
+    "ROADMAP.md"
+    "HISTORY.md"
 )
 
 FILES_DOCKER=(
@@ -405,6 +407,32 @@ copy_docker_files() {
     echo -e "${GREEN}  Configurado:${NC} .env.example e .env local"
 }
 
+copy_adapters() {
+    local dest="$1"
+    local ctx_dir=".agents/templates/contexto/$CONTEXT"
+
+    cp "$ctx_dir/AGENTS.md" "$dest/AGENTS.md"
+    echo -e "${GREEN}  Adapter:${NC} AGENTS.md (Copilot CLI / Codex)"
+
+    cp "$ctx_dir/CLAUDE.md" "$dest/CLAUDE.md"
+    echo -e "${GREEN}  Adapter:${NC} CLAUDE.md (Claude Code)"
+
+    cp "$ctx_dir/GEMINI.md" "$dest/GEMINI.md"
+    echo -e "${GREEN}  Adapter:${NC} GEMINI.md (Gemini / Antigravity)"
+
+    mkdir -p "$dest/.github"
+    cp "$ctx_dir/copilot-instructions.md" "$dest/.github/copilot-instructions.md"
+    echo -e "${GREEN}  Adapter:${NC} .github/copilot-instructions.md (Copilot editor)"
+
+    cp "$ctx_dir/README.md" "$dest/README.md"
+    echo -e "${GREEN}  Configurado:${NC} README.md"
+
+    cp "$ctx_dir/workflow.md" "$dest/.agents/rules/workflow.md"
+    echo -e "${GREEN}  Configurado:${NC} .agents/rules/workflow.md"
+
+    rm -rf "$dest/.agents/templates/contexto"
+}
+
 copy_files() {
     local dest="$1"
 
@@ -428,16 +456,7 @@ copy_files() {
     done
 
     echo -e "${CYAN}Configurando contexto:${NC} ${YELLOW}$CONTEXT${NC}"
-    cp ".agents/rules/$CONTEXT/AGENTS.md" "$dest/AGENTS.md"
-    cp ".agents/rules/$CONTEXT/README.md" "$dest/README.md"
-    cp ".agents/rules/$CONTEXT/workflow.md" "$dest/.agents/rules/workflow.md"
-
-    rm -rf "$dest/.agents/rules/projeto"
-    rm -rf "$dest/.agents/rules/estudo"
-
-    echo -e "${GREEN}  Configurado:${NC} AGENTS.md"
-    echo -e "${GREEN}  Configurado:${NC} README.md"
-    echo -e "${GREEN}  Configurado:${NC} .agents/rules/workflow.md"
+    copy_adapters "$dest"
 
     if [ "$USAR_DOCKER" = true ]; then
         echo -e "${CYAN}Configurando Docker:${NC}"
@@ -445,8 +464,7 @@ copy_files() {
     else
         echo -e "${CYAN}Removendo referências de Docker do destino...${NC}"
         rm -f "$dest/.agents/rules/docker.md"
-        rm -f "$dest/.agents/workflows/setup_docker.md"
-        rm -rf "$dest/.agents/skills/ambiente_docker"
+        rm -rf "$dest/.agents/skills/docker"
         rm -rf "$dest/.agents/templates/.docker"
     fi
 

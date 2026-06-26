@@ -1,6 +1,8 @@
 ---
-name: NomeDaSkill
+name: nome_ingles, nome_portugues
 description: Uma frase clara sobre o que essa skill faz e em que momento o agente deve usá-la.
+tags: [palavra-chave-1, palavra-chave-2, palavra-chave-3]
+triggers: ["frase que o usuário diria", "outra frase", "comando direto"]
 ---
 
 # 🎯 Propósito

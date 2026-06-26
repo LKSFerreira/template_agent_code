@@ -4,12 +4,25 @@ Este repositório contém o template multiagente usado para inicializar **projet
 
 > LINGUAGEM_PROJETO: template
 
+## Arquitetura Universal de Agentes
+
+Este template gera projetos compatíveis com **qualquer agente de LLM**, independente da plataforma:
+
+| Arquivo | Plataforma alvo |
+|---|---|
+| `AGENTS.md` | GitHub Copilot CLI, OpenAI Codex, genérico |
+| `CLAUDE.md` | Claude Code (Anthropic) |
+| `GEMINI.md` | Gemini / Antigravity IDE |
+| `.github/copilot-instructions.md` | GitHub Copilot (editor) |
+
+Todos apontam para a mesma fonte de verdade: `.agents/`.
+
 ## Fonte oficial
 
 - Regras: `.agents/rules/`
 - Skills: `.agents/skills/`
-- Workflows: `.agents/workflows/`
 - Templates: `.agents/templates/`
+- Contextos: `.agents/templates/contexto/`
 - Metadocs: `.metadocs/`
 
 ## Como utilizar
@@ -20,12 +33,16 @@ Para inicializar um novo ambiente usando este template, execute:
 ./init.sh
 ```
 
-O script perguntará qual contexto aplicar e configurará `AGENTS.md`, `README.md`, `.agents/rules/workflow.md` e a estrutura documental mínima no destino.
+O script perguntará qual contexto aplicar e configurará:
+- `AGENTS.md`, `CLAUDE.md`, `GEMINI.md` (adapters universais)
+- `.github/copilot-instructions.md` (adapter GitHub Copilot editor)
+- `README.md` e `.agents/rules/workflow.md` (contexto)
+- Estrutura Docker (opcional)
 
 ## Contextos
 
-- Projeto: `.agents/rules/projeto/`
-- Estudo: `.agents/rules/estudo/`
+- Projeto: `.agents/templates/contexto/projeto/`
+- Estudo: `.agents/templates/contexto/estudo/`
 
 Todas as outras regras, skills e templates são compartilhados entre os contextos.
 

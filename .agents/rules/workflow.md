@@ -10,6 +10,7 @@ trigger: always_on
 - Prefira mudanças pequenas, verificáveis e alinhadas às regras do repositório.
 - Use skills em `.agents/skills/` quando a tarefa corresponder a uma automação existente.
 - Não execute commits, push ou abertura de PR sem pedido explícito.
+- Não simule execução: se precisar validar, execute o comando real ou declare que não foi possível.
 
 ## Etapas
 

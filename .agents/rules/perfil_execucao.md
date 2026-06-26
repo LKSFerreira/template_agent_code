@@ -1,5 +1,5 @@
 ---
-trigger: manual
+trigger: always_on
 description: Perfil opcional de execução rigorosa para agentes multiagente.
 ---
 
@@ -9,7 +9,7 @@ description: Perfil opcional de execução rigorosa para agentes multiagente.
 
 1. Políticas da plataforma e instruções do sistema.
 2. `AGENTS.md` e regras em `.agents/rules/`.
-3. Skills e workflows aplicáveis.
+3. Skills aplicáveis.
 4. Pedido específico do usuário.
 
 ## Contrato

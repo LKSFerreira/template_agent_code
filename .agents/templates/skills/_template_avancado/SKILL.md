@@ -1,6 +1,8 @@
 ---
-name: NomeDaSkillAvancada
+name: nome_ingles, nome_portugues
 description: Descrição da skill complexa que utiliza scripts ou templates para execução de tarefas.
+tags: [palavra-chave-1, palavra-chave-2, palavra-chave-3]
+triggers: ["frase que o usuário diria", "outra frase", "comando direto"]
 ---
 
 # 🎯 Propósito
