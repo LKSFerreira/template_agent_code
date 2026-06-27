@@ -12,7 +12,7 @@ Este ambiente foi inicializado a partir do template multiagente LKSFerreira no c
 ## Skills disponíveis
 
 - `/init`: detecta stack e prepara a documentação inicial.
-- `/novo_chat`: sincroniza contexto e retoma o ponto de parada.
+- `/sync`: sincroniza contexto e retoma o ponto de parada.
 - `/docker`: ajusta ou reconstrói a infraestrutura Docker.
 - `/commit`: prepara commits pequenos e rastreáveis.
 - `/pr`: gera texto de PR com resumo didático do aprendizado.

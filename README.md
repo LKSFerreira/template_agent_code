@@ -76,7 +76,7 @@ Ideia → cria em .metadocs/implementation_plan/ → trabalha → /feat move par
 | `/diag` | Diagnóstico de erros |
 | `/feat` | Finalizar feature |
 | `/front` | Frontend JS/TS |
-| `/skill` | Criar nova skill |
+| `/create-skill` | Criar nova skill |
 | `/find` | Buscar skills no marketplace (skills.sh) |
 | `/web` | Pesquisa web |
 

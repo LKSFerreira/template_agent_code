@@ -20,7 +20,7 @@ Todas as regras e skills estão em `.agents/`. Leia os arquivos relevantes antes
 1. **Versionamento:** NUNCA execute `git commit`, `git push` ou abra PR sem pedido explícito.
 2. **Código:** Português como idioma base. UTF-8 obrigatório. Nomes descritivos, sem abreviações.
 3. **Workflow:** Descoberta → Plano → Execução → Validação → Resumo.
-4. **Skills:** Ao receber `/commit`, `/pr`, `/novo_chat`, `/init`, etc., leia o SKILL.md correspondente em `.agents/skills/`.
+4. **Skills:** Ao receber `/commit`, `/pr`, `/sync`, `/init`, etc., leia o SKILL.md correspondente em `.agents/skills/`.
 5. **Segurança:** Pare e pergunte quando houver risco de perda de dados.
 
 ## Referência rápida de skills

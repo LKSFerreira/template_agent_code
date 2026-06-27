@@ -105,7 +105,7 @@ npx skills update   # atualiza todas
 Se nada for encontrado:
 1. Informe que não encontrou skill existente.
 2. Ofereça ajudar com a tarefa diretamente usando capacidades gerais.
-3. Sugira criar uma skill própria usando a skill `/skill`.
+3. Sugira criar uma skill própria usando a skill `/create-skill`.
 
 # Regras e Restrições
 
