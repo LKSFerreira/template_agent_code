@@ -1,5 +1,5 @@
 ---
-name: skill
+name: create-skill
 alias: autoria_skill
 description: Cria ou melhora skills reutilizáveis em `.agents/skills/` com escopo claro e instruções acionáveis.
 tags: [skill, automação, template, meta, criação, agente, scaffold]
